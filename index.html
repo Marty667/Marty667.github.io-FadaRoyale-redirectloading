@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="3; url=steam://run/4000//+connect 141.94.99.132:27021">
-  <title>Redirection en cours...</title>
+  <meta charset="UTF-8" />
+  <title>Connexion au serveur Steam</title>
   <style>
-    /* Style global de la page */
     body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -17,40 +14,40 @@
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
+      flex-direction: column;
     }
-
-    /* Animation de chargement */
     .loader {
       border: 8px solid #f3f3f3;
       border-top: 8px solid #3498db;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      width: 50px; height: 50px;
       animation: spin 2s linear infinite;
     }
-
-    /* Animation de rotation */
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(360deg);}
     }
-
-    /* Texte d'attente */
-    .message {
-      margin-top: 20px;
+    a.button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #ff4081;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
       font-size: 18px;
+      border-radius: 10px;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <div>
-    <div class="loader"></div>
-    <div class="message">Connexion au serveur en cours...</div>
-  </div>
+  <div class="loader"></div>
+  <p>Connexion au serveur en cours...</p>
+  <p>Si rien ne se passe, <a class="button" href="steam://run/4000//+connect 141.94.99.132:27021">clique ici</a></p>
 
   <script>
-    // Redirection automatique après 3 secondes
-    setTimeout(function() {
+    // Essayer d’ouvrir le lien steam après 3 secondes
+    setTimeout(() => {
       window.location.href = "steam://run/4000//+connect 141.94.99.132:27021";
     }, 3000);
   </script>
